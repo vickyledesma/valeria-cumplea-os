@@ -38,7 +38,7 @@ const PAGE_SIZES = [2, 2, 2, 3, 1];
 const TOTAL = PAGE_SIZES.reduce((a,b)=>a+b, 0);
 const rotations = [-2.5, 1.8, -1.2, 2.2, -1.8, 1.5, -2.0, 1.4, -1.5, 1.2];
 const captions = new Array(TOTAL).fill('');
-const images = new Array(TOTAL).fill(null);
+const images = Array.from({length: TOTAL}, (_, i) => `img${i+1}.jpeg`);
 let current = 0;
 
 const track = document.getElementById('carouselTrack');
