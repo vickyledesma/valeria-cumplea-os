@@ -28,12 +28,15 @@
     .card {
       position: relative; z-index:1;
       max-width: 700px;
-      margin: 36px auto 60px;
+      margin: 16px auto 40px;
       background: #fff9f7;
-      border-radius: 24px;
+      border-radius: 20px;
       box-shadow: 0 20px 60px rgba(120,60,50,.14), 0 4px 16px rgba(0,0,0,.05);
       overflow: hidden;
       animation: riseUp .8s cubic-bezier(.22,.9,.36,1) both;
+    }
+    @media(min-width:480px){
+      .card { margin: 36px auto 60px; border-radius: 24px; }
     }
     @keyframes riseUp {
       from { opacity:0; transform:translateY(36px); }
@@ -43,10 +46,13 @@
     /* ── HEADER ── */
     .card-header {
       background: linear-gradient(160deg, #e8d5ce 0%, #ddc4ba 50%, #d4b8ae 100%);
-      padding: 48px 32px 32px;
+      padding: 32px 20px 24px;
       text-align: center;
       position: relative;
       overflow: hidden;
+    }
+    @media(min-width:480px){
+      .card-header { padding: 48px 32px 32px; }
     }
     .card-header::before {
       content:'';
@@ -74,9 +80,8 @@
       filter: blur(18px);
     }
     .header-img-wrap img {
-      width: min(280px, 75vw);
+      width: min(280px, 70vw);
       position: relative; z-index: 1;
-      filter: drop-shadow(0 0 18px rgba(210,185,178,.9)) drop-shadow(0 8px 24px rgba(190,155,145,.6));
     }
     @keyframes popIn {
       from { transform:scale(.55); opacity:0; }
@@ -120,10 +125,13 @@
 
     /* ── BODY ── */
     .card-body {
-      padding: 36px 40px 40px;
+      padding: 28px 20px 32px;
       display: flex;
       flex-direction: column;
-      gap: 28px;
+      gap: 24px;
+    }
+    @media(min-width:480px){
+      .card-body { padding: 36px 40px 40px; gap: 28px; }
     }
 
     .quote {
@@ -254,15 +262,16 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      gap: 20px;
-      padding: 10px 4px 20px;
+      gap: 14px;
+      padding: 10px 8px 20px;
     }
     .carousel-page[data-count="1"] { gap: 0; }
 
     .polaroid {
-      flex: 0 0 calc(50% - 10px);
+      flex: 0 0 calc(50% - 8px);
+      max-width: 200px;
       background: #fff;
-      padding: 12px 12px 12px;
+      padding: 10px 10px 10px;
       box-shadow: 0 4px 18px rgba(100,50,40,.14), 0 1px 4px rgba(0,0,0,.06);
       border-radius: 3px;
       position: relative;
@@ -270,22 +279,28 @@
       transition: transform .25s, box-shadow .25s;
       cursor: pointer;
     }
+    @media(min-width:480px){
+      .polaroid { padding: 12px; max-width: none; }
+      .carousel-page { gap: 20px; padding: 10px 4px 20px; }
+    }
     .carousel-page[data-count="3"] {
       gap: 0;
-      padding-left: 16px;
-      padding-right: 16px;
+      padding-left: 10px;
+      padding-right: 10px;
     }
     .carousel-page[data-count="3"] .polaroid {
-      flex: 0 0 42%;
-      margin: 0 -5%;
+      flex: 0 0 38%;
+      max-width: none;
+      margin: 0 -4%;
     }
-    .carousel-page[data-count="3"] .polaroid:nth-child(1){ margin-top: 16px; }
+    .carousel-page[data-count="3"] .polaroid:nth-child(1){ margin-top: 14px; }
     .carousel-page[data-count="3"] .polaroid:nth-child(2){ margin-top: -4px; z-index: 2; }
-    .carousel-page[data-count="3"] .polaroid:nth-child(3){ margin-top: 16px; }
+    .carousel-page[data-count="3"] .polaroid:nth-child(3){ margin-top: 14px; }
     .carousel-page[data-count="3"] .polaroid:hover{ z-index: 5; }
-    .carousel-page[data-count="1"] .polaroid { flex-basis: calc(50% - 10px); }
-    @media(max-width:480px){
-      .carousel-page[data-count="3"] .polaroid { flex-basis: 44%; margin: 0 -6%; }
+    .carousel-page[data-count="1"] .polaroid { flex-basis: calc(50% - 8px); max-width: 200px; }
+    @media(min-width:480px){
+      .carousel-page[data-count="3"] .polaroid { flex-basis: 42%; margin: 0 -5%; }
+      .carousel-page[data-count="1"] .polaroid { flex-basis: calc(50% - 10px); max-width: none; }
     }
     .polaroid:hover {
       transform: rotate(0deg) scale(1.04);
@@ -372,9 +387,12 @@
     /* ── FOOTER ── */
     .card-footer {
       background: linear-gradient(135deg, #f0d8d4, #e8cec8);
-      padding: 22px 32px;
+      padding: 18px 20px;
       text-align: center;
       animation: fadeUp .6s 1.2s both;
+    }
+    @media(min-width:480px){
+      .card-footer { padding: 22px 32px; }
     }
     .card-footer p {
       font-family: 'Cormorant Garamond', serif;
